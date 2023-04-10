@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "676037708926",
+    "project_id": "dhillon-zachary-comp304-lab5",
+    "storage_bucket": "dhillon-zachary-comp304-lab5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:676037708926:android:a5f8e2cd2dfad9f77b1c2f",
+        "android_client_info": {
+          "package_name": "com.example.dhillon_zachary_comp304_lab5"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "676037708926-e5lr79leoae3dhckiis0hpc4u5bvr969.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAO90N7B-vuC0oFEKJ2dP4CNyGr-pxbn9A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "676037708926-e5lr79leoae3dhckiis0hpc4u5bvr969.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
