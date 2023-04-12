@@ -11,34 +11,36 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Dhillon_Zachary_COMP304_Lab5"
         tools:targetApi="31">
-
+        <activity
+            android:name=".MovieActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ViewModel.SignUpActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.example.dhillon_zachary_comp304_lab5.ACTION_SIGNUP" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ViewModel.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.example.dhillon_zachary_comp304_lab5.ACTION_LOGIN" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

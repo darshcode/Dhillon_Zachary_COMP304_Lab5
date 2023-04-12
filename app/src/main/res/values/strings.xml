@@ -11,4 +11,8 @@
     <string name="confirm_password">Confirm Password</string>
     <string name="sign_up_password">Password</string>
     <string name="enter_email">Enter Email</string>
+    <string name="enter_movie_ratings">Enter Movie Ratings</string>
+    <string name="enter_movie_year">Enter Movie Year</string>
+    <string name="enter_movie_genre">Enter Movie Genre</string>
+    <string name="enter_movie_name">Enter Movie Name</string>
 </resources>
