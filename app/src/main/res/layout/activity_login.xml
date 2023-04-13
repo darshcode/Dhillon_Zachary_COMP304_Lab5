@@ -14,10 +14,10 @@
 
 
     <EditText
-        android:id="@+id/et_Email"
+        android:id="@+id/id_Login_Email"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
+        android:inputType="textEmailAddress"
         android:hint="Enter Email"
         android:textAlignment="center"
         android:textSize="20dp"
@@ -25,7 +25,7 @@
 
 
     <EditText
-        android:id="@+id/et_Password"
+        android:id="@+id/id_Login_Password"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
@@ -35,17 +35,17 @@
         android:layout_marginBottom="30dp"/>
 
     <Button
-        android:id="@+id/bt_login"
+        android:id="@+id/id_Login_btn"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text="@string/login"
         android:textSize="20dp"/>
 
     <Button
-        android:id="@+id/go_back"
+        android:id="@+id/id_Login_signupBtn"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Go Back"
+        android:text="Sign Up"
         android:textSize="20dp"/>
 
 </LinearLayout>

@@ -5,8 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
-import com.example.dhillon_zachary_comp304_lab5.ViewModel.LoginActivity
-import com.example.dhillon_zachary_comp304_lab5.ViewModel.SignUpActivity
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
@@ -17,9 +15,11 @@ import com.google.firebase.ktx.Firebase
 class MainActivity : AppCompatActivity() {
 
     private val TAG = "AttentionTag"
-    lateinit var btnSignUp: Button
+    private lateinit var btnSignUp: Button
+    private lateinit var loginBtn: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -28,16 +28,20 @@ class MainActivity : AppCompatActivity() {
         val database = Firebase.database
         val myRef = database.getReference("message")
 
+        //variables
+        loginBtn = findViewById(R.id.id_main_Login_btn)
+        btnSignUp = findViewById(R.id.id_main_signup_btn)
+
         //Creating Intent For Sign Up Button
-        btnSignUp = findViewById(R.id.tv_signup)
+
         btnSignUp.setOnClickListener {
             val intent = Intent(this@MainActivity, SignUpActivity::class.java)
             startActivity(intent)
         }
 
         //Creating Intent For Login Button
-        val btnLogin: Button = findViewById(R.id.id_BtnLogin)
-        btnLogin.setOnClickListener {
+
+        loginBtn.setOnClickListener {
             val intent = Intent(this@MainActivity, LoginActivity::class.java)
             startActivity(intent)
         }

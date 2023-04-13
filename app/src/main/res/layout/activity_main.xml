@@ -6,13 +6,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <Button
-        android:id="@+id/id_BtnLogin"
+        android:id="@+id/id_main_Login_btn"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text="@string/login"/>
 
     <Button
-        android:id="@+id/tv_signup"
+        android:id="@+id/id_main_signup_btn"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text="@string/sign_up_bt"/>

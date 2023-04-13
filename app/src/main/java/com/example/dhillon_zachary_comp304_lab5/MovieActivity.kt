@@ -1,13 +1,10 @@
-package com.example.dhillon_zachary_comp304_lab5.ViewModel
+package com.example.dhillon_zachary_comp304_lab5
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import com.example.dhillon_zachary_comp304_lab5.MainActivity
-import com.example.dhillon_zachary_comp304_lab5.R
-import com.example.dhillon_zachary_comp304_lab5.ViewModel.MovieData
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
