@@ -67,7 +67,7 @@ class LoginActivity : AppCompatActivity() {
                         if (user != null) {
                             Log.d(tag, "signInWithEmail:success ${user.email}")
                         }
-                        val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                        val intent = Intent(this@LoginActivity, MovieActivity::class.java)
                         startActivity(intent)
                     } else {
                         // If sign in fails, display a message to the user.
