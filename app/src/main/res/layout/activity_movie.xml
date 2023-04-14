@@ -42,24 +42,31 @@
         android:id="@+id/submit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Submit"/>
+        android:text="@string/submit"/>
 
     <Button
         android:id="@+id/edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Edit"/>
+        android:text="@string/edit"/>
 
     <Button
         android:id="@+id/delete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Delete"/>
+        android:text="@string/delete"/>
 
     <Button
         android:id="@+id/go_back"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Go Back"/>
+        android:text="@string/go_back"/>
+
+    <TextView
+        android:id="@+id/id_Movie_moviesList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Movies list goes here"
+        />
 
 </LinearLayout>

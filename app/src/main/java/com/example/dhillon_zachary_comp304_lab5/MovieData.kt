@@ -6,5 +6,5 @@ data class MovieData (
     val movieYear: Int = 0,
     val movieRating: Double = 0.0,
     val movieGenre: String = "",
-    val key: String? = null
+    var primaryId: String? = null
 )

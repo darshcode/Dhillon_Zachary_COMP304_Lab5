@@ -15,4 +15,8 @@
     <string name="enter_movie_year">Enter Movie Year</string>
     <string name="enter_movie_genre">Enter Movie Genre</string>
     <string name="enter_movie_name">Enter Movie Name</string>
+    <string name="submit">Submit</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="go_back">Go Back</string>
 </resources>
