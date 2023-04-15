@@ -1,6 +1,7 @@
 package com.example.dhillon_zachary_comp304_lab5
-/*
 
+
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -9,6 +10,7 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
 
+/*
 object DAO {
     private val database = Firebase.database
     private val myRef = database.getReference("Movies")
@@ -48,4 +50,4 @@ object DAO {
         myRef.child(movie.primaryId!!).removeValue()
     }
 }
- */
+*/

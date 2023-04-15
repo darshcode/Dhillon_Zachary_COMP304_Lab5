@@ -5,34 +5,36 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 
-class MyViewModel(private val repository: Repository) : ViewModel(){
+class MyViewModel(private val repository: MyRepository) : ViewModel() {
 
-    var movieList : LiveData<ArrayList<MovieData>> = repository.allMovies
+    var movieList: LiveData<ArrayList<MovieData>> = repository.allMovies
 
 
-    fun insert(laptop: MovieData) = viewModelScope.launch {
-        repository.insert(laptop)
+    fun insert(movie: MovieData) = viewModelScope.launch {
+        repository.insert(movie)
     }
 
-    fun update(input: String, newInput: String){
+    fun update(input: String, newInput: String) {
         viewModelScope.launch {
-            for(laptop in movieList.value!!){
-                if(laptop.movieName == input){
-                    laptop.movieName = newInput
-                    repository.update(laptop)
+            for (movie in movieList.value!!) {
+                if (movie.movieName == input) {
+                    movie.movieName = newInput
+                    repository.update(movie)
                 }
             }
         }
     }
 
-    fun delete(input: String){
+    fun delete(input: String) {
         viewModelScope.launch {
-            for(p in movieList.value!!){
-                if(p.movieName == input){
+            for (p in movieList.value!!) {
+                if (p.movieName == input) {
                     repository.delete(p)
                 }
             }
         }
     }
 
-}*/
+}
+
+ */

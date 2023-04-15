@@ -1,9 +1,9 @@
 
 package com.example.dhillon_zachary_comp304_lab5
-/*
-import androidx.lifecycle.MutableLiveData
 
-class Repository(private val movieDao : DAO ) {
+import androidx.lifecycle.MutableLiveData
+/*
+class MyRepository(private val movieDao : DAO ) {
 
     val allMovies: MutableLiveData<ArrayList<MovieData>> = movieDao.liveMovieList
 
