@@ -31,16 +31,66 @@ class MovieActivity : AppCompatActivity() {
     private lateinit var btnDelete: Button
     private lateinit var btnBack: Button
 
+    //Adding Reference To Firebase Database
+    private val database = Firebase.database
+    private var myRef = database.getReference("Movies")
+
+    //Displaying Movies
+    private fun displayMovies() {
+        myRef.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                val stringBuilder = StringBuilder()
+                for (snapshot in dataSnapshot.children) {
+                    val movie = snapshot.getValue(MovieData::class.java)
+                    if (movie != null) {
+                        stringBuilder.append("${movie.movieName} (${movie.movieYear}) - ${movie.movieYear} - Rating: ${movie.movieRating}\n\n")
+                    }
+                }
+                moviesList.text = stringBuilder.toString()
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+                Log.w("Error", "Failed to read value.", databaseError.toException())
+            }
+        })
+    }
+
+    //Update Movie
+    private fun updateMovie(movieName: String, updatedMovie: MovieData) {
+        myRef.orderByChild("name").equalTo(movieName).addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                for (snapshot in dataSnapshot.children) {
+                    snapshot.ref.setValue(updatedMovie)
+                }
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+                Log.w("Error", "Failed to update movie.", databaseError.toException())
+            }
+        })
+    }
+
+    //Delete Movie
+    private fun deleteMovie(movieName: String) {
+        myRef.orderByChild("name").equalTo(movieName).addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                for (snapshot in dataSnapshot.children) {
+                    snapshot.ref.removeValue()
+                }
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+                Log.w("Error", "Failed to delete movie.", databaseError.toException())
+            }
+        })
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie)
 
-        //moviesList = findViewById(R.id.id_Movie_moviesList)
-        //val allMovies:MutableLiveData<ArrayList<MovieData>>
-
-
-
-
+        moviesList = findViewById(R.id.id_Movie_moviesList)
+        val allMovies:MutableLiveData<ArrayList<MovieData>>
 
         //Binding Variables To UI Elements
         btnAdd = findViewById(R.id.submit)
@@ -54,9 +104,10 @@ class MovieActivity : AppCompatActivity() {
         movieRating = findViewById(R.id.et_movie_ratings)
         movieGenre = findViewById(R.id.et_movie_genre)
 
-        //Adding Reference To Firebase Database
         val database = Firebase.database
-        val myRef = database.getReference("Movies")
+        myRef = database.getReference("Movies")
+
+        displayMovies()
 
         //Adding Movie To Database
         btnAdd.setOnClickListener {
@@ -66,27 +117,21 @@ class MovieActivity : AppCompatActivity() {
 
         //Updating Movie In Database
         btnUpdate.setOnClickListener {
-            //val movie = MovieData(movieName.text.toString(), movieYear.text.toString().toInt(), movieRating.text.toString().toDouble(), movieGenre.text.toString())
-            //myRef.push().setValue(movie)
-
+            val updatedMovie = MovieData(movieName.text.toString(), movieYear.text.toString().toInt(), movieRating.text.toString().toDouble(), movieGenre.text.toString())
+            updateMovie(movieName.text.toString(), updatedMovie)
         }
 
         //Deleting Movie From Database
         btnDelete.setOnClickListener {
-            //val movie = MovieData(movieName.text.toString(), movieYear.text.toString().toInt(), movieRating.text.toString().toDouble(), movieGenre.text.toString())
-            //myRef.push().setValue(movie)
-
-          //  if (movieName = myRef.child(movieName in MovieData)){
-
-           // }
-
+            deleteMovie(movieName.text.toString())
         }
 
         //Create Intent To Go Back To Main Activity
         btnBack.setOnClickListener {
-            //val intent = Intent(this@MovieActivity, MainActivity::class.java)
-            //startActivity(intent)
+            val intent = Intent(this@MovieActivity, MainActivity::class.java)
+            startActivity(intent)
         }
 
     }
 }
+
