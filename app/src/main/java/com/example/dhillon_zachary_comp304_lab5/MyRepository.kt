@@ -1,6 +1,8 @@
 
 package com.example.dhillon_zachary_comp304_lab5
 
+import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.google.firebase.database.*
@@ -27,7 +29,7 @@ class MyRepository {
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
-                // Handle error
+                Log.e("Error", "Failed to read value.", databaseError.toException())
             }
         })
     }
