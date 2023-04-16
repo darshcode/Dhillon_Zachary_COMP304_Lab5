@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
+import androidx.lifecycle.viewModelScope
 
 class MovieActivity : AppCompatActivity() {
 

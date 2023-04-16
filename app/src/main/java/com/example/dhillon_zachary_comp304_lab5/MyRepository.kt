@@ -40,7 +40,7 @@ class MyRepository {
         movieRef.child(movie.movieName).setValue(movie)
     }
 
-    suspend fun delete(movie: MovieData) = withContext(Dispatchers.IO) {
-        movieRef.child(movie.movieName).removeValue()
+    suspend fun delete(movieName: String) = withContext(Dispatchers.IO) {
+        movieRef.child(movieName).removeValue()
     }
 }

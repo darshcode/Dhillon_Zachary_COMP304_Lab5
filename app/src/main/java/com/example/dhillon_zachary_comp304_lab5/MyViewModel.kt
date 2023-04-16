@@ -16,7 +16,10 @@ class MyViewModel(private val repository: MyRepository) : ViewModel() {
         repository.update(movie)
     }
 
-    fun delete(movie: MovieData) = viewModelScope.launch {
-        repository.delete(movie)
+    fun delete(movieName: String) {
+        viewModelScope.launch {
+            repository.delete(movieName)
+        }
     }
+
 }
